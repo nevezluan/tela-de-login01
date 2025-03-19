@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/5986e0bae0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>Tela de Login</title>
+  </head>
+  <body>
+    <main id="container">
+      <form id="login_form">
+        <div id="form_header">
+          <h1>Login</h1>
+          <!-- Toggle switch para alternar o modo claro/escuro -->
+          <label class="switch">
+            <input type="checkbox" id="mode_toggle" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div id="social_media">
+          <a href="#">
+            <img src="assets/img/icons8-instagram-48.png" alt="Instagram" />
+          </a>
+          <a href="#">
+            <img src="assets/img/icons8-google-logo-48.png" alt="Google" />
+          </a>
+          <a href="#">
+            <img src="assets/img/icons8-github-48.png" alt="GitHub" />
+          </a>
+        </div>
+
+        <div id="inputs">
+          <div class="input-box">
+            <label for="name">
+              Nome
+              <div class="input-field">
+                <i class="fa-regular fa-user"></i>
+                <input type="text" id="name" name="name" required />
+              </div>
+            </label>
+          </div>
+
+          <div class="input-box">
+            <label for="email">
+              E-mail
+              <div class="input-field">
+                <i class="fa-regular fa-envelope"></i>
+                <input type="email" id="email" name="email" required />
+              </div>
+            </label>
+          </div>
+
+          <div class="input-box">
+            <label for="password">
+              Senha
+              <div class="input-field">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" id="password" name="password" required />
+                <!-- Ícone de olho para mostrar/ocultar senha-->
+                <i class="fa-solid fa-eye" id="toggle_password"></i>
+              </div>
+            </label>
+            <div id="forgot_password">
+              <a href="#">Esqueceu sua senha?</a>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" id="login_button">Login</button>
+      </form>
+    </main>
+    <script type="text/javascript" src="assets/script.js"></script>
+  </body>
+</html>

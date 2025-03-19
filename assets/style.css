@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+:root {
+  --color-light-50: #f8fafc;
+
+  --color-dark-50: #797984;
+  --color-dark-100: #312d37;
+  --color-dark-900: #000;
+
+  --color-blue-50: #6495ed;
+  --color-blue-100: #4169e1;
+  --color-blue-200: #0000cd;
+
+  --color-gradient: linear-gradient(
+    90deg,
+    var(--color-blue-50),
+    var(--color-blue-100),
+    var(--color-blue-200)
+  );
+}
+
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  transition: background-color 0.3s ease-in-out;
+}
+
+#container {
+  height: 100vh;
+  width: 100%;
+  background: url("/assets/img/bg-light01.jpg") no-repeat center center;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login_form {
+  background-color: var(--color-light-50);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px;
+  border-radius: 8px;
+  gap: 30px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  height: fit-content;
+  animation: dark-to-light 0.3s ease-in-out;
+}
+
+#form_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#form_header h1 {
+  font-size: 40px;
+  position: relative;
+}
+
+#form_header h1::before {
+  position: absolute;
+  content: "";
+  width: 45%;
+  background-color: var(--color-blue-50);
+  height: 6px;
+  bottom: 1.5px;
+  border-radius: 6px;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+/* Estilo para o ícone de olho */
+#toggle_password {
+  cursor: pointer;
+  color: var(--color-dark-50);
+  margin-left: 10px;
+  transition: color 0.3s ease;
+  position: absolute;
+  right: 0;
+}
+
+#toggle_password:hover {
+  color: var(--color-blue-50);
+}
+
+/* O círculo que desliza */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--color-light-50);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+/* Ícone dentro do círculo */
+.slider:after {
+  content: "\f186"; /* Ícone de lua (FontAwesome) */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  height: 26px;
+  width: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark-900);
+  transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.switch input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.switch input:checked + .slider:after {
+  content: "\f185"; /* Ícone de sol (FontAwesome) */
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#social_media {
+  display: flex;
+  justify-content: space-around;
+}
+
+#social_media img {
+  width: 35px;
+}
+
+#social_media img:hover {
+  transform: scale(1.4);
+}
+
+#inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input-box label {
+  font-size: 14px;
+  color: var(--color-dark-50);
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 3px;
+  cursor: text;
+  border-bottom: 1px solid var(--color-blue-50);
+  position: relative; /* Para o ícone de olho */
+}
+
+.input-field i {
+  font-size: 18px;
+  color: var(--color-dark-900);
+}
+
+.input-field input {
+  border: none;
+  background-color: transparent;
+  width: 260px;
+  font-size: 18px;
+  padding: 0px 5px;
+  flex: 1;
+}
+
+.input-field input:focus {
+  outline: none;
+}
+
+#forgot_password a {
+  text-decoration: none;
+  font-size: 12px;
+  color: var(--color-dark-100);
+}
+
+#forgot_password a:hover {
+  color: var(--color-blue-50);
+}
+
+#login_button {
+  border: none;
+  background: var(--color-dark-50);
+  color: var(--color-light-50);
+  padding: 7px;
+  font-size: 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  width: 30%;
+  min-width: 120px;
+  margin: 0 auto;
+}
+
+#login_button:hover {
+  transform: scale(1.2);
+}
+
+/* Modo dark */
+.dark #container {
+  background: #1c1c1c;
+}
+
+body.dark #container {
+  background: url("/assets/img/bg-dark02.jpg") no-repeat center center;
+  background-size: cover;
+  background-position: center 35%;
+}
+
+.dark #login_form {
+  color: var(--color-light-50);
+  background-color: var(--color-dark-100);
+  animation: light-to-dark 0.3s ease-in-out;
+}
+
+.dark .input-field input,
+.dark .input-field i {
+  color: var(--color-light-50);
+}
+
+.dark #login_button {
+  background: #fff;
+  color: #000;
+}
+
+.dark #forgot_password a {
+  color: #fff;
+}
+
+.dark #forgot_password a:hover {
+  color: var(--color-blue-50);
+}
+
+@keyframes dark-to-light {
+  0% {
+    background-color: var(--color-dark-100);
+  }
+  100% {
+    background-color: var(--color-light-50);
+  }
+}
+
+@keyframes light-to-dark {
+  0% {
+    background-color: var(--color-light-50);
+  }
+  100% {
+    background-color: var(--color-dark-100);
+  }
+}
